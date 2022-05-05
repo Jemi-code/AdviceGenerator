@@ -1,0 +1,64 @@
+@import "custom";
+
+body{
+    min-height: 100vh;
+    font-family: $font-family;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .innWrap{
+        h1{
+            letter-spacing: $spacer*0.1;
+            font-size: 14px;
+        }
+        blockquote{
+            text-transform: none;
+            font-weight: $font-weight-bold;
+            font-size: $fontsize;
+        }
+        a{
+            position: relative;
+            top: $spacer*2;
+            width: 60px;
+            height: 60px;
+            img{
+                margin: 0.6rem auto;
+            }
+        }
+
+        a:hover{
+            box-shadow: $box-shadow-lg;
+        }
+        padding-top: 2.5rem;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
+}
+
+@include media-breakpoint-down(sm) {
+    .innWrap{
+        width: 90% !important;
+       }
+
+    .innWrap{
+        blockquote{
+            font-size: $fontsize - 8 !important;
+        }
+        .divider{
+            content: url("../images/pattern-divider-mobile.svg")
+        }
+    }
+}
+
+@include media-breakpoint-between(sm, lg) {
+    .innWrap{
+        width: 70% !important;
+    }
+}
